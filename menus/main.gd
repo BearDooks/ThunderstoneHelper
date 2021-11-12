@@ -175,8 +175,10 @@ func _randomize_cards():
 				"Setting":
 					if drawn_setting_count == 0:
 						print("Setting drawn")
+						monster_cards.remove(0) # need to remove this card to avoid an infinite loop
 					else:
 						print("Setting already drawn!")
+						monster_cards.remove(0) # need to remove this card to avoid an infinite loop
 				_:
 					print(monster_cards.pop_front())
 					drawn_monster_count += 1
@@ -212,4 +214,4 @@ func _draw_feature_card(amount):
 			monster_cards.remove(0) # need to remove this card to avoid an infinite loop
 		else:
 			# You somehow ran out of feature cards
-			monster_cards.remove(0)
+			monster_cards.remove(0) # need to remove this card to avoid an infinite loop
