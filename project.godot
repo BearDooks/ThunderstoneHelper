@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="ThunderstoneHelper"
-run/main_scene="res://menus/main.tscn"
+run/main_scene="res://games/thunderstone/thunderstone.tscn"
 config/icon="res://icon.png"
 
 [display]
