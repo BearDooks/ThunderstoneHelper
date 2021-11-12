@@ -75,163 +75,141 @@ var feature_cards : Array = []
 var guardian_cards : Array = []
 var setting_cards : Array = []
 
-
-
 func _ready():
-    randomize() # needed to make this all random
-    random.connect("pressed", self, "_randomize_cards")
+	randomize() # needed to make this all random
+	random.connect("pressed", self, "_randomize_cards")
 
 # Function called when the user has selected all versions of the game they want to play with
 func _randomize_cards():
-    # Clear all arrays to keep things clean
-    hero_cards.clear()
-    monster_cards.clear()
-    village_cards.clear()
-    thunderstone_cards.clear()
-    feature_cards.clear()
-    guardian_cards.clear()
-    setting_cards.clear()
-    print("Arrays have been cleared")
+	# Clear all arrays to keep things clean
+	hero_cards.clear()
+	monster_cards.clear()
+	village_cards.clear()
+	thunderstone_cards.clear()
+	feature_cards.clear()
+	guardian_cards.clear()
+	setting_cards.clear()
 
-    # Add all cards to the arrays from selected games
-    # Note that feature cards will be shuffled into the monster deck
-    if thunderstone_base_check.pressed:
-        hero_cards.append_array(thunderstone_hero)
-        monster_cards.append_array(thunderstone_monster)
-        village_cards.append_array(thunderstone_village)
-        thunderstone_cards.append_array(thunderstone_stone)
-        print("Thunderstone Base Cards Added")
+	# Add all cards to the arrays from selected games
+	# Note that feature cards will be shuffled into the monster deck
+	if thunderstone_base_check.pressed:
+		hero_cards.append_array(thunderstone_hero)
+		monster_cards.append_array(thunderstone_monster)
+		village_cards.append_array(thunderstone_village)
+		thunderstone_cards.append_array(thunderstone_stone)
 
-    if thunderstone_wrath_check.pressed:
-        hero_cards.append_array(thunderstone_wrath_hero)
-        monster_cards.append_array(thunderstone_wrath_monster)
-        village_cards.append_array(thunderstone_wrath_village)
-        thunderstone_cards.append_array(thunderstone_wrath_stone)
-        feature_cards.append_array(thunderstone_wrath_feature)
-        print("Wrath of the Elements Cards Added")
+	if thunderstone_wrath_check.pressed:
+		hero_cards.append_array(thunderstone_wrath_hero)
+		monster_cards.append_array(thunderstone_wrath_monster)
+		village_cards.append_array(thunderstone_wrath_village)
+		thunderstone_cards.append_array(thunderstone_wrath_stone)
+		feature_cards.append_array(thunderstone_wrath_feature)
 
-    if thunderstone_doom_check.pressed:
-        hero_cards.append_array(thunderstone_doom_hero)
-        monster_cards.append_array(thunderstone_doom_monster)
-        village_cards.append_array(thunderstone_doom_village)
-        thunderstone_cards.append_array(thunderstone_doom_stone)
-        feature_cards.append_array(thunderstone_doom_feature)
-        guardian_cards.append_array(thunderstone_doom_guardian)
-        print("Doomgate Legion Cards Added")
+	if thunderstone_doom_check.pressed:
+		hero_cards.append_array(thunderstone_doom_hero)
+		monster_cards.append_array(thunderstone_doom_monster)
+		village_cards.append_array(thunderstone_doom_village)
+		thunderstone_cards.append_array(thunderstone_doom_stone)
+		feature_cards.append_array(thunderstone_doom_feature)
+		guardian_cards.append_array(thunderstone_doom_guardian)
 
-    if thunderstone_dragon_check.pressed:
-        hero_cards.append_array(thunderstone_dragon_hero)
-        monster_cards.append_array(thunderstone_dragon_monster)
-        village_cards.append_array(thunderstone_dragon_village)
-        thunderstone_cards.append_array(thunderstone_dragon_stone)
-        feature_cards.append_array(thunderstone_dragon_feature)
-        guardian_cards.append_array(thunderstone_dragon_guardian)
-        setting_cards.append_array(thunderstone_dragon_setting)
-        print("Dragonspire Cards Added")
+	if thunderstone_dragon_check.pressed:
+		hero_cards.append_array(thunderstone_dragon_hero)
+		monster_cards.append_array(thunderstone_dragon_monster)
+		village_cards.append_array(thunderstone_dragon_village)
+		thunderstone_cards.append_array(thunderstone_dragon_stone)
+		feature_cards.append_array(thunderstone_dragon_feature)
+		guardian_cards.append_array(thunderstone_dragon_guardian)
+		setting_cards.append_array(thunderstone_dragon_setting)
 
-    if thunderstone_thorn_check.pressed:
-        hero_cards.append_array(thunderstone_thorn_hero)
-        monster_cards.append_array(thunderstone_thorn_monster)
-        village_cards.append_array(thunderstone_thorn_village)
-        thunderstone_cards.append_array(thunderstone_thorn_stone)
-        feature_cards.append_array(thunderstone_thorn_feature)
-        guardian_cards.append_array(thunderstone_thorn_guardian)
-        print("Thornwood Siege Cards Added")
+	if thunderstone_thorn_check.pressed:
+		hero_cards.append_array(thunderstone_thorn_hero)
+		monster_cards.append_array(thunderstone_thorn_monster)
+		village_cards.append_array(thunderstone_thorn_village)
+		thunderstone_cards.append_array(thunderstone_thorn_stone)
+		feature_cards.append_array(thunderstone_thorn_feature)
+		guardian_cards.append_array(thunderstone_thorn_guardian)
 
-    if thunderstone_heart_check.pressed:
-        hero_cards.append_array(thunderstone_heart_hero)
-        monster_cards.append_array(thunderstone_heart_monster)
-        village_cards.append_array(thunderstone_heart_village)
-        thunderstone_cards.append_array(thunderstone_heart_stone)
-        feature_cards.append_array(thunderstone_heart_feature)
-        guardian_cards.append_array(thunderstone_heart_guardian)
-        setting_cards.append_array(thunderstone_heart_setting)
-        print("Heart of Doom Cards Added")
+	if thunderstone_heart_check.pressed:
+		hero_cards.append_array(thunderstone_heart_hero)
+		monster_cards.append_array(thunderstone_heart_monster)
+		village_cards.append_array(thunderstone_heart_village)
+		thunderstone_cards.append_array(thunderstone_heart_stone)
+		feature_cards.append_array(thunderstone_heart_feature)
+		guardian_cards.append_array(thunderstone_heart_guardian)
+		setting_cards.append_array(thunderstone_heart_setting)
 
-    # Suffle all the decks before drawing
-    hero_cards.shuffle()
-    print("Hero Shuffled")
-    monster_cards.shuffle()
-    print("Monster Shuffled")
-    village_cards.shuffle()
-    print("Village Shuffled")
-    thunderstone_cards.shuffle()
-    print("Thunderstone Shuffled")
-    feature_cards.shuffle()
-    print("Feature Shuffled")
-    guardian_cards.shuffle()
-    print("Guardian Shuffled")
-    setting_cards.shuffle()
-    print("Setting Shuffled")
-    print("")
-    print("")
+	# Suffle all the decks before drawing
+	hero_cards.shuffle()
+	monster_cards.shuffle()
+	village_cards.shuffle()
+	thunderstone_cards.shuffle()
+	feature_cards.shuffle()
+	guardian_cards.shuffle()
+	setting_cards.shuffle()
 
-    # Print Basic Cards
-    print("Basic Cards:")
-    for item in basic_cards:
-        print(item)
-    print("")
+	# Print Basic Cards
+	# These cards will always be in the village
+	print("Basic Cards:")
+	for item in basic_cards:
+		print(item)
+	print("")
 
-    # Print Village Cards
-    print("Village Cards:")
-    for item in village_cards:
-        print(item)
-    print("")
+	# Print Village Cards
+	print("Village Cards:")
+	for item in range(12):
+		print(village_cards[item])
+	print("")
 
-    # Print Monster Cards
-    var drawn_monster_count = 0 # Needed to track monsters v. features that are drawn
-    var drawn_setting_count = 0 # Needed to ensure only one setting is pulled
-    print("Monster Cards:")
-    while drawn_monster_count < 3:
-        if monster_cards and monster_cards.size() > 0:
-            match monster_cards[0]:
-                "Dungeon Feature":
-    #				_draw_feature_card()
-                    pass
-                "Pick Two":
-    #				_draw_feature_card()
-                    pass
-                "Setting":
-                    if drawn_setting_count == 0:
-                        pass
-                    else:
-                        pass # Don't draw if there is already a setting
-                _:
-                    print(monster_cards.pop_front())
-                    drawn_monster_count += 1
-    print("")
+	# Print Monster Cards
+	var drawn_monster_count = 0 # Needed to track monsters v. features that are drawn
+	var drawn_setting_count = 0 # Needed to ensure only one setting is pulled
+	print("Monster Cards:")
+	while drawn_monster_count < 3:
+		if monster_cards and monster_cards.size() > 0:
+			match monster_cards[0]:
+				"Dungeon Feature":
+					_draw_feature_card(1)
+				"Pick Two":
+					_draw_feature_card(2)
+				"Setting":
+					if drawn_setting_count == 0:
+						print("Setting drawn")
+					else:
+						print("Setting already drawn!")
+				_:
+					print(monster_cards.pop_front())
+					drawn_monster_count += 1
+	print("")
 
-    # Print Thunderstone Card
-    print("Thunderstone Card:")
-    if thunderstone_cards and thunderstone_cards.size() > 0:
-        print(thunderstone_cards[0])
+	# Print Thunderstone Card
+	print("Thunderstone Card:")
+	if thunderstone_cards and thunderstone_cards.size() > 0:
+		print(thunderstone_cards[0])
 
 # Function used to draw a randomf eature card and place it in the monster deck
-func _draw_feature_card():
-    match feature_cards[0]:
-        "Trap * Dire":
-            print(monster_cards[0])
-            feature_cards.remove(0)
-        "Trap * Death":
-            print(monster_cards[0])
-            feature_cards.remove(0)
-        "Trap * Draconic":
-            print(monster_cards[0])
-            feature_cards.remove(0)
-        "Guardian":
-            print(guardian_cards[0])
-            guardian_cards.remove(0)
-            feature_cards.remove(0)
-        "Amulet Treasures":
-            print(monster_cards[0])
-            feature_cards.remove(0)
-        "Ulbrick's Treasures":
-            print(monster_cards[0])
-            feature_cards.remove(0)
-        "Sorcerer's Treasures":
-            print(monster_cards[0])
-            feature_cards.remove(0)
-        "Figurine Treasure":
-            print(monster_cards[0])
-            feature_cards.remove(0)
-            feature_cards.remove(0)
+func _draw_feature_card(amount):
+	for x in range(amount):
+		if feature_cards and feature_cards.size() > 0:
+			match feature_cards[0]:
+				"Trap * Dire":
+					print(feature_cards.pop_front())
+				"Trap * Death":
+					print(feature_cards.pop_front())
+				"Trap * Draconic":
+					print(feature_cards.pop_front())
+				"Guardian":
+					print(guardian_cards.pop_front())
+					feature_cards.remove(0)
+				"Amulet Treasures":
+					print(feature_cards.pop_front())
+				"Ulbrick's Treasures":
+					print(feature_cards.pop_front())
+				"Sorcerer's Treasures":
+					print(feature_cards.pop_front())
+				"Figurine Treasure":
+					print(feature_cards.pop_front())
+			monster_cards.remove(0) # need to remove this card to avoid an infinite loop
+		else:
+			# You somehow ran out of feature cards
+			monster_cards.remove(0)
