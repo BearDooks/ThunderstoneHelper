@@ -91,6 +91,7 @@ func _randomize_cards():
 	feature_cards.clear()
 	guardian_cards.clear()
 	setting_cards.clear()
+	print("Arrays have been cleared")
 	
 	# Add all cards to the arrays from selected games
 	# Note that feature cards will be shuffled into the monster deck
@@ -99,6 +100,7 @@ func _randomize_cards():
 		monster_cards.append_array(thunderstone_monster)
 		village_cards.append_array(thunderstone_village)
 		thunderstone_cards.append_array(thunderstone_stone)
+		print("Thunderstone Base Cards Added")
 
 	if thunderstone_wrath_check.pressed:
 		hero_cards.append_array(thunderstone_wrath_hero)
@@ -106,6 +108,7 @@ func _randomize_cards():
 		village_cards.append_array(thunderstone_wrath_village)
 		thunderstone_cards.append_array(thunderstone_wrath_stone)
 		feature_cards.append_array(thunderstone_wrath_feature)
+		print("Wrath of the Elements Cards Added")
 
 	if thunderstone_doom_check.pressed:
 		hero_cards.append_array(thunderstone_doom_hero)
@@ -114,6 +117,7 @@ func _randomize_cards():
 		thunderstone_cards.append_array(thunderstone_doom_stone)
 		feature_cards.append_array(thunderstone_doom_feature)
 		guardian_cards.append_array(thunderstone_doom_guardian)
+		print("Doomgate Legion Cards Added")
 
 	if thunderstone_dragon_check.pressed:
 		hero_cards.append_array(thunderstone_dragon_hero)
@@ -123,6 +127,7 @@ func _randomize_cards():
 		feature_cards.append_array(thunderstone_dragon_feature)
 		guardian_cards.append_array(thunderstone_dragon_guardian)
 		setting_cards.append_array(thunderstone_dragon_setting)
+		print("Dragonspire Cards Added")
 
 	if thunderstone_thorn_check.pressed:
 		hero_cards.append_array(thunderstone_thorn_hero)
@@ -131,6 +136,7 @@ func _randomize_cards():
 		thunderstone_cards.append_array(thunderstone_thorn_stone)
 		feature_cards.append_array(thunderstone_thorn_feature)
 		guardian_cards.append_array(thunderstone_thorn_guardian)
+		print("Thornwood Siege Cards Added")
 
 	if thunderstone_heart_check.pressed:
 		hero_cards.append_array(thunderstone_heart_hero)
@@ -140,15 +146,25 @@ func _randomize_cards():
 		feature_cards.append_array(thunderstone_heart_feature)
 		guardian_cards.append_array(thunderstone_heart_guardian)
 		setting_cards.append_array(thunderstone_heart_setting)
+		print("Heart of Doom Cards Added")
 
 	# Suffle all the decks before drawing
 	hero_cards.shuffle()
+	print("Hero Shuffled")
 	monster_cards.shuffle()
+	print("Monster Shuffled")
 	village_cards.shuffle()
+	print("Village Shuffled")
 	thunderstone_cards.shuffle()
+	print("Thunderstone Shuffled")
 	feature_cards.shuffle()
+	print("Feature Shuffled")
 	guardian_cards.shuffle()
+	print("Guardian Shuffled")
 	setting_cards.shuffle()
+	print("Setting Shuffled")
+	print("")
+	print("")
 	
 	# Print Basic Cards
 	print("Basic Cards:")
