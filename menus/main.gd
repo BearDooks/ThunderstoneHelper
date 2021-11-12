@@ -63,6 +63,37 @@ const thunderstone_heart_feature : Array = ["Sorcerer's Treastures", 'Guardian']
 const thunderstone_heart_guardian : Array = ['Heart of Doom', 'The Last Doomknight', 'Mournwater Witch']
 const thunderstone_heart_setting : Array = ['Last Refuge', 'Mournwater Swamp', 'Rite of Banishing']
 
+# Harruli Promo Pack (2011)
+const thunderstone_harruli_hero : Array = ['Harruli']
+
+# Vicious Promo Pack (2012)
+const thunderstone_vicious_monster : Array = ['Hydra Dragon']
+const thunderstone_vicious_guardian : Array = ['Guardian of Revenge']
+const thunderstone_vicious_setting : Array = ['Thornwood Forest']
+
+# Promo Pack #1 (2011)
+const thunderstone_promo1_hero : Array = ['Harruli']
+const thunderstone_promo1_monster : Array = ['Cultist * Humanoid', 'Evil Druid * Familiar']
+const thunderstone_promo1_feature : Array = ['Trap * Death']
+const thunderstone_promo1_guardian : Array = ['Death Sentinel']
+
+# Promo Pack #2 (2011)
+const thunderstone_promo2_monster : Array = ['Dragon * Humanoid']
+const thunderstone_promo2_guardian : Array = ['Guardian of Strength']
+const thunderstone_promo2_setting : Array = ['Stormhold']
+
+# Werewolf Promo (2011)
+const thunderstone_werewolf_monster : Array = ['Werewolf', 'Hydra Dragon']
+const thunderstone_werewolf_guardian : Array = ['Guardian of Revenge']
+const thunderstone_werewolf_setting : Array = ['Thornwood Forest']
+
+# Death Sentinel Promo (2010)
+const thunderstone_death_guardian : Array = ['Death Sentinel']
+
+# For the Dwarf Promo (2010)
+const thunderstone_dwarf_hero : Array = ['Clan']
+
+
 ##################
 # Arrays Section #
 ##################
@@ -195,7 +226,7 @@ func _draw_feature_card(amount):
         if feature_cards and feature_cards.size() > 0:
             match feature_cards[0]:
                 "Trap * Dire":
-                    print(feature_cards.pop_front())
+                  print(feature_cards.pop_front())
                 "Trap * Death":
                     print(feature_cards.pop_front())
                 "Trap * Draconic":
