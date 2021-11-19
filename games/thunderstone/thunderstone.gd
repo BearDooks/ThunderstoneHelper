@@ -1,13 +1,13 @@
 extends Control
 
 # Connections
-onready var random = $VBoxContainer/random
-onready var thunderstone_base_check = $VBoxContainer/thunderstone_base
-onready var thunderstone_wrath_check = $VBoxContainer/thunderstone_wrath
-onready var thunderstone_doom_check = $VBoxContainer/thunderstone_doom
-onready var thunderstone_dragon_check = $VBoxContainer/thunderstone_dragon
-onready var thunderstone_thorn_check = $VBoxContainer/thunderstone_thorn
-onready var thunderstone_heart_check = $VBoxContainer/thunderstone_heart
+onready var random = $VBoxContainer/top/random
+onready var thunderstone_base_check = $VBoxContainer/top/thunderstone_base
+onready var thunderstone_wrath_check = $VBoxContainer/top/thunderstone_wrath
+onready var thunderstone_doom_check = $VBoxContainer/top/thunderstone_doom
+onready var thunderstone_dragon_check = $VBoxContainer/top/thunderstone_dragon
+onready var thunderstone_thorn_check = $VBoxContainer/top/thunderstone_thorn
+onready var thunderstone_heart_check = $VBoxContainer/top/thunderstone_heart
 
 #################
 # Cards Section #

@@ -20,65 +20,75 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="thunderstone_base" type="CheckBox" parent="VBoxContainer"]
-margin_top = 288.0
+[node name="top" type="VBoxContainer" parent="VBoxContainer"]
 margin_right = 450.0
-margin_bottom = 312.0
+margin_bottom = 395.0
+size_flags_vertical = 3
+
+[node name="thunderstone_base" type="CheckBox" parent="VBoxContainer/top"]
+margin_right = 450.0
+margin_bottom = 24.0
 text = "Thunderstone Base Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="thunderstone_wrath" type="CheckBox" parent="VBoxContainer"]
-margin_top = 322.0
+[node name="thunderstone_wrath" type="CheckBox" parent="VBoxContainer/top"]
+margin_top = 28.0
 margin_right = 450.0
-margin_bottom = 346.0
+margin_bottom = 52.0
 text = "Thunderstone Wrath "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="thunderstone_doom" type="CheckBox" parent="VBoxContainer"]
-margin_top = 356.0
+[node name="thunderstone_doom" type="CheckBox" parent="VBoxContainer/top"]
+margin_top = 56.0
 margin_right = 450.0
-margin_bottom = 380.0
+margin_bottom = 80.0
 text = "Thunderstone Doom"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="thunderstone_dragon" type="CheckBox" parent="VBoxContainer"]
-margin_top = 390.0
+[node name="thunderstone_dragon" type="CheckBox" parent="VBoxContainer/top"]
+margin_top = 84.0
 margin_right = 450.0
-margin_bottom = 414.0
+margin_bottom = 108.0
 text = "Thunderstone Dragon"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="thunderstone_thorn" type="CheckBox" parent="VBoxContainer"]
-margin_top = 424.0
+[node name="thunderstone_thorn" type="CheckBox" parent="VBoxContainer/top"]
+margin_top = 112.0
 margin_right = 450.0
-margin_bottom = 448.0
+margin_bottom = 136.0
 text = "Thunderstone Thorn"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="thunderstone_heart" type="CheckBox" parent="VBoxContainer"]
-margin_top = 458.0
+[node name="thunderstone_heart" type="CheckBox" parent="VBoxContainer/top"]
+margin_top = 140.0
 margin_right = 450.0
-margin_bottom = 482.0
+margin_bottom = 164.0
 text = "Thunderstone Heart"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="random" type="Button" parent="VBoxContainer"]
-margin_top = 492.0
+[node name="random" type="Button" parent="VBoxContainer/top"]
+margin_top = 168.0
 margin_right = 450.0
-margin_bottom = 512.0
+margin_bottom = 188.0
 text = "Randomize"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="bottom" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 405.0
+margin_right = 450.0
+margin_bottom = 800.0
+size_flags_vertical = 3
