@@ -1,0 +1,103 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Thunderstone Helper.png" type="Texture" id=1]
+[ext_resource path="res://menus/main_menu/main_menu.gd" type="Script" id=2]
+
+[node name="main_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 450.0
+margin_bottom = 800.0
+size_flags_horizontal = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="top" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 450.0
+margin_bottom = 263.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/top"]
+margin_right = 147.0
+margin_bottom = 263.0
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/top"]
+margin_left = 151.0
+margin_right = 298.0
+margin_bottom = 263.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/top"]
+margin_left = 302.0
+margin_right = 450.0
+margin_bottom = 263.0
+size_flags_horizontal = 3
+
+[node name="middle" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 267.0
+margin_right = 450.0
+margin_bottom = 533.0
+size_flags_vertical = 3
+
+[node name="thunderstone" type="Button" parent="VBoxContainer/middle"]
+margin_left = 125.0
+margin_right = 325.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 50 )
+size_flags_horizontal = 4
+text = "Thunderstone"
+
+[node name="thunderstone_adv" type="Button" parent="VBoxContainer/middle"]
+margin_left = 125.0
+margin_top = 54.0
+margin_right = 325.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 200, 50 )
+size_flags_horizontal = 4
+text = "Thunderstone Adavnce"
+
+[node name="thunderstone_quest" type="Button" parent="VBoxContainer/middle"]
+margin_left = 125.0
+margin_top = 108.0
+margin_right = 325.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 200, 50 )
+size_flags_horizontal = 4
+text = "Thunderstone Quest"
+
+[node name="settings" type="Button" parent="VBoxContainer/middle"]
+margin_left = 125.0
+margin_top = 162.0
+margin_right = 325.0
+margin_bottom = 212.0
+rect_min_size = Vector2( 200, 50 )
+size_flags_horizontal = 4
+text = "Settings"
+
+[node name="credits" type="Button" parent="VBoxContainer/middle"]
+margin_left = 125.0
+margin_top = 216.0
+margin_right = 325.0
+margin_bottom = 266.0
+rect_min_size = Vector2( 200, 50 )
+size_flags_horizontal = 4
+text = "Credits"
+
+[node name="bottom" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 537.0
+margin_right = 450.0
+margin_bottom = 800.0
+size_flags_vertical = 3

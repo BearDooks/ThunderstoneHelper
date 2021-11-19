@@ -11,15 +11,15 @@ config_version=4
 [application]
 
 config/name="ThunderstoneHelper"
-run/main_scene="res://games/thunderstone/thunderstone.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://menus/main_menu/main_menu.tscn"
+config/icon="res://assets/Thunderstone Helper.png"
 
 [display]
 
 window/size/width=450
 window/size/height=800
-window/size/test_width=900
-window/size/test_height=1600
+window/size/test_width=450
+window/size/test_height=800
 window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
