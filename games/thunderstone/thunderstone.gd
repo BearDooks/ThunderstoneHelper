@@ -8,6 +8,7 @@ onready var thunderstone_doom_check = $VBoxContainer/top/thunderstone_doom
 onready var thunderstone_dragon_check = $VBoxContainer/top/thunderstone_dragon
 onready var thunderstone_thorn_check = $VBoxContainer/top/thunderstone_thorn
 onready var thunderstone_heart_check = $VBoxContainer/top/thunderstone_heart
+onready var output_box = $VBoxContainer/bottom/output
 
 #################
 # Cards Section #
@@ -108,11 +109,14 @@ var setting_cards : Array = []
 
 func _ready():
     randomize() # needed to make this all random
+    output_box.bbcode_enabled = true # Enable bbcode
+    output_box.fit_content_height = true
     random.connect("pressed", self, "_randomize_cards")
 
 # Function called when the user has selected all versions of the game they want to play with
 func _randomize_cards():
     # Clear all arrays to keep things clean
+    output_box.clear()
     hero_cards.clear()
     monster_cards.clear()
     village_cards.clear()
@@ -182,20 +186,27 @@ func _randomize_cards():
     # Print Basic Cards
     # These cards will always be in the village
     print("Basic Cards:")
+    output_box.append_bbcode("[b]Basic Cards:[/b] \n")
     for item in basic_cards:
         print(item)
+        output_box.append_bbcode("[indent]" + item + "[/indent]\n")
     print("")
+    
+   
 
     # Print Village Cards
     print("Village Cards:")
+    output_box.append_bbcode("\n[b]Village Cards:[/b] \n")
     for item in range(12):
         print(village_cards[item])
+        output_box.append_bbcode("[indent]" + village_cards[item] + "[/indent]\n")
     print("")
 
     # Print Monster Cards
     var drawn_monster_count = 0 # Needed to track monsters v. features that are drawn
     var drawn_setting_count = 0 # Needed to ensure only one setting is pulled
     print("Monster Cards:")
+    output_box.append_bbcode("\n[b]Monster Cards:[/b] \n")
     while drawn_monster_count < 3:
         if monster_cards and monster_cards.size() > 0:
             match monster_cards[0]:
@@ -212,13 +223,16 @@ func _randomize_cards():
                         monster_cards.remove(0) # need to remove this card to avoid an infinite loop
                 _:
                     print(monster_cards.pop_front())
+                    output_box.append_bbcode("[indent]" + monster_cards.pop_front() + "[/indent]\n")
                     drawn_monster_count += 1
     print("")
 
     # Print Thunderstone Card
     print("Thunderstone Card:")
+    output_box.append_bbcode("\n[b]Thunderstone Card:[/b] \n")
     if thunderstone_cards and thunderstone_cards.size() > 0:
         print(thunderstone_cards[0])
+        output_box.append_bbcode("[indent]" + thunderstone_cards[0] + "[/indent]\n")
 
 # Function used to draw a randomf eature card and place it in the monster deck
 func _draw_feature_card(amount):
@@ -227,21 +241,29 @@ func _draw_feature_card(amount):
             match feature_cards[0]:
                 "Trap * Dire":
                   print(feature_cards.pop_front())
+                  output_box.append_bbcode("[indent]" + feature_cards.pop_front() + "[/indent]\n")
                 "Trap * Death":
                     print(feature_cards.pop_front())
+                    output_box.append_bbcode("[indent]" + feature_cards.pop_front() + "[/indent]\n")
                 "Trap * Draconic":
                     print(feature_cards.pop_front())
+                    output_box.append_bbcode("[indent]" + feature_cards.pop_front() + "[/indent]\n")
                 "Guardian":
                     print(guardian_cards.pop_front())
+                    output_box.append_bbcode("[indent]" + guardian_cards.pop_front() + "[/indent]\n")
                     feature_cards.remove(0)
                 "Amulet Treasures":
                     print(feature_cards.pop_front())
+                    output_box.append_bbcode("[indent]" + feature_cards.pop_front() + "[/indent]\n")
                 "Ulbrick's Treasures":
                     print(feature_cards.pop_front())
+                    output_box.append_bbcode("[indent]" + feature_cards.pop_front() + "[/indent]\n")
                 "Sorcerer's Treasures":
                     print(feature_cards.pop_front())
+                    output_box.append_bbcode("[indent]" + feature_cards.pop_front() + "[/indent]\n")
                 "Figurine Treasure":
                     print(feature_cards.pop_front())
+                    output_box.append_bbcode("[indent]" + feature_cards.pop_front() + "[/indent]\n")
             monster_cards.remove(0) # need to remove this card to avoid an infinite loop
         else:
             # You somehow ran out of feature cards
