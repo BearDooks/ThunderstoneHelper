@@ -96,6 +96,7 @@ rect_min_size = Vector2( 200, 50 )
 size_flags_horizontal = 4
 text = "Creditss"
 
+
 [node name="bottom" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 537.0
 margin_right = 450.0
